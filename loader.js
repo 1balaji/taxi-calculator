@@ -19,6 +19,14 @@
                     }
                 }
             }
+            if (undefined !== response.css && response.css.length) {
+                var cssPath;
+                for (cssPath in response.css) {
+                    if (response.css.hasOwnProperty(cssPath)) {
+                        document.body.appendChild('<link href="' + response.css[cssPath] + '" type="text/css" rel="stylesheet">');
+                    }
+                }
+            }
         }
     });
 
